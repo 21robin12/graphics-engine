@@ -18,11 +18,25 @@ namespace GraphicsEngine
 
         public MainWindow()
         {
+            const int height = 800;
+            const int width = 800;
+
             InitializeComponent();
 
+            Top = 100;
+            Left = 100;
+
+            Height = height;
+            MinHeight = height;
+            MaxHeight = height;
+
+            Width = width;
+            MinWidth = width;
+            MaxWidth = width;            
+
             writeableBitmap = new WriteableBitmap(
-                300,
-                300,
+                height,
+                width,
                 96,
                 96,
                 PixelFormats.Bgr32,
@@ -38,24 +52,12 @@ namespace GraphicsEngine
 
             Content = image;
 
-            //var grid = FindName("grid") as Grid;
-            //if (grid == null)
-            //    throw new Exception("Main grid not found");
-
-            //grid.Children.Add(image);
-
-            //window.MouseWheel += new MouseWheelEventHandler(w_MouseWheel);
-
-            //Application app = new Application();
-
             DrawPixel(100, 100);
             DrawPixel(100, 101);
             DrawPixel(100, 102);
             DrawPixel(100, 103);
             DrawPixel(100, 104);
             DrawPixel(100, 105);
-
-            //app.Run();
         }
 
         static void DrawPixel(int x, int y)
